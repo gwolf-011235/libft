@@ -45,21 +45,37 @@ SRC_B := 	ft_lstadd_back.c\
 			ft_lstiter.c\
 			ft_lstmap.c
 
+SRC_G :=	get_next_line.c\
+			get_next_line_utils.c
+
 OBJ := $(SRC:.c=.o)
 
 OBJ_B := $(SRC_B:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra
+OBJ_G := $(SRC_G:.c=.o)
+
+CFLAGS = -Werror -Wextra -Wall -g
+
+CC := cc
 
 .PHONY: all, bonus, clean, fclean, re, re_bonus
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@ar -rcs $(NAME) $(OBJ)
+$(NAME): $(OBJ) $(OBJ_B) $(OBJ_G)
+	@ar -rcs $(NAME) $(OBJ) $(OBJ_B) $(OBJ_G)
 
 $(OBJ): $(SRC)
 	@$(CC) -c $(SRC)
+
+$(OBJ_B): $(SRC_B)
+	@$(CC) -c $(SRC_B)
+
+$(OBJ_G): $(SRC_G)
+	@$(CC) -c $(SRC_G)
+
+initial: $(OBJ)
+	@ar -rcs $(NAME) $(OBJ)
 
 bonus: $(OBJ) $(OBJ_B)
 	@ar -rcs $(NAME) $(OBJ) $(OBJ_B)
