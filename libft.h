@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:55:23 by gwolf             #+#    #+#             */
-/*   Updated: 2022/12/02 08:56:27 by gwolf            ###   ########.fr       */
+/*   Updated: 2022/12/02 09:02:43 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@
 # include <limits.h>
 # include <stdbool.h>
 
+/* colors */
+# define GREEN "\033[0;32m"
+# define PURPLE "\033[0;35m"
+# define RED "\033[1;31m"
+# define YELLOW "\033[1;33m"
+# define BLUE "\033[0;34m"
+# define NOC "\033[0m"
+
+/* buffer size for get_next_line */
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # elif BUFFER_SIZE <= 0
