@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:55:23 by gwolf             #+#    #+#             */
-/*   Updated: 2022/12/02 09:02:43 by gwolf            ###   ########.fr       */
+/*   Updated: 2022/12/02 09:24:59 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/* libft bonus */
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -102,10 +104,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /* get_next_line */
 char		*get_next_line(int fd);
-bool		ft_read_into_buf(int fd, t_buf_node **head, size_t *p_line_size);
-bool		ft_search_nl(t_buf_node **head, int rd_bts);
-bool		ft_save_the_buf(char *temp, int rd_bts, t_buf_node *cur_node);
-char		*ft_prep_line(t_buf_node **head, size_t	*p_line_size);
 
 /* get_next_line_utils */
 char		*ft_lstclear_plus(t_buf_node **head, bool fclear);
