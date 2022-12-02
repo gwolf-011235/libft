@@ -6,11 +6,11 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:20:13 by gwolf             #+#    #+#             */
-/*   Updated: 2022/11/16 10:36:12 by gwolf            ###   ########.fr       */
+/*   Updated: 2022/12/02 09:12:53 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
