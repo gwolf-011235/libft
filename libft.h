@@ -6,11 +6,13 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:55:23 by gwolf             #+#    #+#             */
-/*   Updated: 2022/12/01 10:13:27 by gwolf            ###   ########.fr       */
+/*   Updated: 2022/12/02 08:56:27 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
+# define LIBFT_H
+
 # include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -20,8 +22,22 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <stdbool.h>
 
-# define LIBFT_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# elif BUFFER_SIZE <= 0
+#  error "BUFFER_SIZE must be bigger than 0"
+# endif
+
+/* list for get_next_line */
+typedef struct s_buf_node {
+	char				buf[BUFFER_SIZE];
+	size_t				size;
+	bool				has_nl;
+	struct s_buf_node	*next;
+	struct s_buf_node	*tail;
+}				t_buf_node;
 
 typedef struct s_list
 {
@@ -29,6 +45,7 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+/* libft standard */
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -73,5 +90,18 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/* get_next_line */
+char		*get_next_line(int fd);
+bool		ft_read_into_buf(int fd, t_buf_node **head, size_t *p_line_size);
+bool		ft_search_nl(t_buf_node **head, int rd_bts);
+bool		ft_save_the_buf(char *temp, int rd_bts, t_buf_node *cur_node);
+char		*ft_prep_line(t_buf_node **head, size_t	*p_line_size);
+
+/* get_next_line_utils */
+char		*ft_lstclear_plus(t_buf_node **head, bool fclear);
+t_buf_node	*ft_lstadd_buf(t_buf_node **head);
+void		*ft_memchr(const void *s, int c, size_t n);
+void		*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif
