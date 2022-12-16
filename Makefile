@@ -63,9 +63,13 @@ CC := cc
 all: $(NAME)
 
 $(NAME): $(OBJ) $(OBJ_B) $(OBJ_G)
+	@echo "** libft **"
+	@echo "Creating archive"
 	@ar -rcs $(NAME) $(OBJ) $(OBJ_B) $(OBJ_G)
 
 $(OBJ): $(SRC)
+	@echo "** libft **"
+	@echo "Creating o. files"
 	@$(CC) -c $(SRC)
 
 $(OBJ_B): $(SRC_B)
@@ -81,9 +85,13 @@ bonus: $(OBJ) $(OBJ_B)
 	@ar -rcs $(NAME) $(OBJ) $(OBJ_B)
 
 clean:
+	@echo "** libft **"
+	@echo "Deleting o. files"
 	@rm -f *.o
 
 fclean:
+	@echo "** libft **"
+	@echo "Deleting o. files and archive libft.a"
 	@rm *.o -f
 	@rm $(NAME) -f
 
