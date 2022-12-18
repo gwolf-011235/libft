@@ -24,14 +24,6 @@
 # include <limits.h>
 # include <stdbool.h>
 
-/* colors */
-# define GREEN "\033[0;32m"
-# define PURPLE "\033[0;35m"
-# define RED "\033[1;31m"
-# define YELLOW "\033[1;33m"
-# define BLUE "\033[0;34m"
-# define NOC "\033[0m"
-
 /* buffer size for get_next_line */
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
