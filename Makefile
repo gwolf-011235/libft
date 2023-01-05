@@ -58,7 +58,7 @@ CFLAGS = -Werror -Wextra -Wall -g
 
 CC := cc
 
-.PHONY: all, bonus, clean, fclean, re, re_bonus
+.PHONY: all, $(NAME), initial, bonus, clean, fclean, re, re_bonus
 
 all: $(NAME)
 
@@ -97,4 +97,4 @@ fclean:
 
 re: fclean all
 
-re_bonus: fclean bonus clean
+re_bonus: fclean bonus
