@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:55:23 by gwolf             #+#    #+#             */
-/*   Updated: 2022/12/02 09:24:59 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/01/05 11:19:19 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,5 @@ char		*get_next_line(int fd);
 /* get_next_line_utils */
 char		*ft_lstclear_plus(t_buf_node **head, bool fclear);
 t_buf_node	*ft_lstadd_buf(t_buf_node **head);
-void		*ft_memchr(const void *s, int c, size_t n);
-void		*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif
