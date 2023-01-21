@@ -98,7 +98,7 @@ OBJS := $(addprefix $(OBJ_PATH)/, $(OBJS_NAME))
 
 HIT_TOTAL = $(words $(SRCS))
 HIT_COUNT = $(eval HIT_N != expr ${HIT_N} + 1)${HIT_N}
-ECHO = printf "[`expr ${HIT_COUNT} '*' 100 / ${HIT_TOTAL}`%%] %s\r"
+ECHO = printf "\033[2K\r[`expr ${HIT_COUNT} '*' 100 / ${HIT_TOTAL}`%%] %s"
 
 .PHONY: all, clean, fclean, re
 .SILENT:
@@ -106,7 +106,7 @@ ECHO = printf "[`expr ${HIT_COUNT} '*' 100 / ${HIT_TOTAL}`%%] %s\r"
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	printf "$(GREEN)%-50s$(RESET)\n" "Compilation done"
+	printf "\033[2K\r$(GREEN)%-50s$(RESET)\n" "Compilation done"
 	ar -rcs $(NAME) $(OBJS)
 	printf "$(GREEN)%-50s$(RESET)\n" "$(NAME) done"
 
@@ -116,6 +116,7 @@ $(OBJ_PATH):
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
 	$(ECHO) "$(CC) $@"
+	sleep 0.01
 	$(COMPILE) -o $@ -c $<
 
 clean:
