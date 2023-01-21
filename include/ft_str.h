@@ -6,7 +6,7 @@
 /*   By: gwolf <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 10:38:01 by gwolf             #+#    #+#             */
-/*   Updated: 2023/01/21 11:10:41 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/01/21 12:57:07 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include "ft_mem.h"
 
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);

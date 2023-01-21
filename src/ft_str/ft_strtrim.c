@@ -6,11 +6,11 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:32:13 by gwolf             #+#    #+#             */
-/*   Updated: 2022/10/23 14:34:54 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/01/21 12:55:19 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_str.h"
 
 /* Allocates (with malloc(3)) and returns a copy of ’s1’ with the characters
 ** specified in ’set’ removed from the beginning and the end of the string */

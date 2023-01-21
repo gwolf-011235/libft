@@ -6,11 +6,11 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 21:07:43 by gwolf             #+#    #+#             */
-/*   Updated: 2022/10/23 16:42:19 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/01/21 12:57:11 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_str.h"
 
 /* Allocates (with malloc(3)) and returns a substring from the string ’s’.
 ** The substring begins at index ’start’ and is of maximum size ’len’ */

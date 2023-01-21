@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:44:15 by gwolf             #+#    #+#             */
-/*   Updated: 2023/01/21 11:31:14 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/01/21 12:52:52 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdbool.h>
 # include <stddef.h>
 # include <limits.h>
+# include <unistd.h>
+# include "ft_char.h"
+# include "ft_num.h"
 # include "ft_str.h"
 
 typedef struct s_label {

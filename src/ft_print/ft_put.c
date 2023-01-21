@@ -6,11 +6,11 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:44:53 by gwolf             #+#    #+#             */
-/*   Updated: 2023/01/15 13:55:22 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/01/21 12:53:53 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_print.h"
 
 void	ft_putchar(unsigned char c, size_t *count)
 {
