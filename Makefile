@@ -96,6 +96,10 @@ OBJ_DIRS :=	ft_char\
 SRCS := $(addprefix $(SRC_PATH)/, $(SRCS_NAME))
 OBJS := $(addprefix $(OBJ_PATH)/, $(OBJS_NAME))
 
+HIT_TOTAL = $(words $(SRCS))
+HIT_COUNT = $(eval HIT_N != expr ${HIT_N} + 1)${HIT_N}
+ECHO = printf "[`expr ${HIT_COUNT} '*' 100 / ${HIT_TOTAL}`%%] %s\r"
+
 .PHONY: all, clean, fclean, re
 .SILENT:
 
@@ -111,7 +115,7 @@ $(OBJ_PATH):
 	mkdir -p $(addprefix $(OBJ_PATH)/, $(OBJ_DIRS))
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	printf "%-50s\r" "$(CC) $@"
+	$(ECHO) "$(CC) $@"
 	$(COMPILE) -o $@ -c $<
 
 clean:
