@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:37:48 by gwolf             #+#    #+#             */
-/*   Updated: 2023/01/21 11:31:40 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/02/02 19:41:40 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_ftptr	ft_look_up_ptr(unsigned char c)
 {
-	const static t_ftptr	look_up_table[128] = {
+	static const t_ftptr	look_up_table[128] = {
 	['c'] = ft_convert_c,
 	['s'] = ft_convert_s,
 	['p'] = ft_convert_p,
