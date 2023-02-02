@@ -104,11 +104,11 @@ ECHO = printf "\033[2K\r[`expr ${HIT_COUNT} '*' 100 / ${HIT_TOTAL}`%%] %s"
 .SILENT:
 
 all: $(NAME)
+	printf "$(GREEN)%-50s$(RESET)\n" "$(NAME) done"
 
 $(NAME): $(OBJS)
 	printf "\033[2K\r$(GREEN)%-50s$(RESET)\n" "Compilation done"
 	ar -rcs $(NAME) $(OBJS)
-	printf "$(GREEN)%-50s$(RESET)\n" "$(NAME) done"
 
 $(OBJ_PATH):
 	mkdir -p $(OBJ_PATH)
@@ -116,7 +116,6 @@ $(OBJ_PATH):
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
 	$(ECHO) "$(CC) $@"
-	sleep 0.01
 	$(COMPILE) -o $@ -c $<
 
 clean:
