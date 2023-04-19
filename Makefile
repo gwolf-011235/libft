@@ -1,5 +1,5 @@
 CC := cc
-CFLAGS = -Werror -Wextra -Wall -g
+CFLAGS = -Werror -Wextra -Wall -g -fPIE
 INCLUDE := -I include/
 COMPILE := $(CC) $(CFLAGS) $(INCLUDE)
 
