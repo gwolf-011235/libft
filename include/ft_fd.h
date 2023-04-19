@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fd.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwolf <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:18:16 by gwolf             #+#    #+#             */
-/*   Updated: 2023/01/21 11:24:41 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/04/19 09:43:36 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 /* buffer size for get_next_line */
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 4096
 # elif BUFFER_SIZE <= 0
 #  error "BUFFER_SIZE must be bigger than 0"
 # endif
