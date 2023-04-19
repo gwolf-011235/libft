@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:14:59 by gwolf             #+#    #+#             */
-/*   Updated: 2023/01/21 11:24:49 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/04/19 10:25:09 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static bool	ft_read_into_buf(int fd, t_buf_node **head, size_t *p_line_size)
 		if (ft_search_nl(head, rd_bts))
 			return (true);
 		*p_line_size += new_node->size;
-		if (new_node->has_nl || rd_bts < BUFFER_SIZE)
+		if (new_node->has_nl || rd_bts == 0)
 			break ;
 	}
 	return (false);
