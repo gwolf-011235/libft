@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:20:13 by gwolf             #+#    #+#             */
-/*   Updated: 2023/04/20 14:48:54 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/04/20 15:16:31 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char	*ft_clear_all_buffers(t_buf_node *cluster[CLUSTER_SIZE])
 		ft_lstclear_plus(&cluster[i], true);
 		i++;
 	}
+	return (NULL);
 }
 
 char	*ft_lstclear_plus(t_buf_node **head, bool fclear)
