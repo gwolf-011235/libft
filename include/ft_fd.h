@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:18:16 by gwolf             #+#    #+#             */
-/*   Updated: 2023/04/20 14:49:17 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/04/20 17:53:51 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <stdbool.h>
+# include <errno.h>
+
 # include "ft_str.h"
 # include "ft_mem.h"
 

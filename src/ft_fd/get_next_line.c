@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:14:59 by gwolf             #+#    #+#             */
-/*   Updated: 2023/04/20 14:51:41 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/04/20 17:53:38 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ static bool	ft_read_into_buf(int fd, t_buf_node **head, size_t *p_line_size)
 		if (!new_node)
 			return (true);
 		rd_bts = read(fd, new_node->buf, BUFFER_SIZE);
-		if (!rd_bts)
+		if (rd_bts == -1 && (errno == EAGAIN || errno == EWOULDBLOCK))
+			continue ;
+		else if (rd_bts == 0)
 		{
 			new_node->size = 0;
 			new_node->has_nl = false;
@@ -73,7 +75,7 @@ static bool	ft_read_into_buf(int fd, t_buf_node **head, size_t *p_line_size)
 		if (ft_search_nl(head, rd_bts))
 			return (true);
 		*p_line_size += new_node->size;
-		if (new_node->has_nl || rd_bts == 0)
+		if (new_node->has_nl)
 			break ;
 	}
 	return (false);
