@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:14:59 by gwolf             #+#    #+#             */
-/*   Updated: 2023/04/19 10:25:09 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/04/20 14:51:41 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,7 @@ static bool	ft_read_into_buf(int fd, t_buf_node **head, size_t *p_line_size)
 	int			rd_bts;
 	t_buf_node	*new_node;
 
-	rd_bts = 1;
-	while (rd_bts)
+	while (1)
 	{
 		new_node = ft_lstadd_buf(head);
 		if (!new_node)
@@ -80,16 +79,14 @@ static bool	ft_read_into_buf(int fd, t_buf_node **head, size_t *p_line_size)
 	return (false);
 }
 
-static char	*ft_prep_line(t_buf_node **head, size_t	*p_line_size)
+static char	*ft_prep_line(t_buf_node **head, size_t	line_size)
 {
 	char		*line;
-	size_t		line_size;
 	t_buf_node	*temp;
 
 	temp = *head;
 	if (temp && temp->size != 0)
 	{
-		line_size = *p_line_size;
 		line = malloc(line_size + 1);
 		if (!line)
 			return (NULL);
@@ -110,12 +107,12 @@ static char	*ft_prep_line(t_buf_node **head, size_t	*p_line_size)
 
 char	*get_next_line(int fd)
 {
-	static t_buf_node	*cluster[4096];
+	static t_buf_node	*cluster[CLUSTER_SIZE];
 	char				*line;
 	size_t				line_size;
 
 	if (fd < 0)
-		return (NULL);
+		return (ft_clear_all_buffers(cluster));
 	if (read(fd, NULL, 0) < 0)
 		return (ft_lstclear_plus(&cluster[fd], true));
 	if (cluster[fd] && ft_search_nl(&cluster[fd], cluster[fd]->size))
@@ -127,7 +124,7 @@ char	*get_next_line(int fd)
 	if (!cluster[fd] || !cluster[fd]->has_nl)
 		if (ft_read_into_buf(fd, &cluster[fd], &line_size))
 			return (ft_lstclear_plus(&cluster[fd], true));
-	line = ft_prep_line(&cluster[fd], &line_size);
+	line = ft_prep_line(&cluster[fd], line_size);
 	if (!line)
 		return (ft_lstclear_plus(&cluster[fd], true));
 	ft_lstclear_plus(&cluster[fd], false);

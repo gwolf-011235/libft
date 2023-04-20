@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:18:16 by gwolf             #+#    #+#             */
-/*   Updated: 2023/04/19 09:43:36 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/04/20 14:49:17 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@
 #  define BUFFER_SIZE 4096
 # elif BUFFER_SIZE <= 0
 #  error "BUFFER_SIZE must be bigger than 0"
+# endif
+
+/* cluster size for how many fd*/
+# ifndef CLUSTER_SIZE
+#  define CLUSTER_SIZE 1
+# elif CLUSTER_SIZE <= 0
+#  error "CLUSTER_SIZE must be bigger than 0"
 # endif
 
 /* list for get_next_line */
@@ -46,6 +53,7 @@ char		*get_next_line(int fd);
 
 /* get_next_line_utils */
 char		*ft_lstclear_plus(t_buf_node **head, bool fclear);
+char		*ft_clear_all_buffers(t_buf_node *cluster[CLUSTER_SIZE]);
 t_buf_node	*ft_lstadd_buf(t_buf_node **head);
 
 #endif
