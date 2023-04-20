@@ -1,7 +1,8 @@
 CC := cc
-CFLAGS = -Werror -Wextra -Wall -g -fPIE
+CFLAGS = -Werror -Wextra -Wall -fPIE
+BUFFER = -DBUFFER_SIZE=$(BUF_SIZE)
 INCLUDE := -I include/
-COMPILE := $(CC) $(CFLAGS) $(INCLUDE)
+COMPILE := $(CC) $(CFLAGS) $(BUFFER) $(INCLUDE)
 
 #Colors
 RESET := \033[0m
