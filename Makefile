@@ -1,5 +1,6 @@
 CC := cc
 CFLAGS = -Werror -Wextra -Wall -fPIE
+BUF_SIZE ?= 4096
 BUFFER = -DBUFFER_SIZE=$(BUF_SIZE)
 INCLUDE := -I include/
 COMPILE := $(CC) $(CFLAGS) $(BUFFER) $(INCLUDE)
@@ -116,7 +117,7 @@ $(OBJ_PATH):
 	mkdir -p $(addprefix $(OBJ_PATH)/, $(OBJ_DIRS))
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	$(ECHO) "$(CC) $@"
+	$(ECHO) "$(COMPILE) $@"
 	$(COMPILE) -o $@ -c $<
 
 clean:
