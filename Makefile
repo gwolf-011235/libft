@@ -1,17 +1,28 @@
-CC := cc
-CFLAGS = -Werror -Wextra -Wall -fPIE
-BUF_SIZE ?= 4096
-BUFFER = -DBUFFER_SIZE=$(BUF_SIZE)
-INCLUDE := -I include/
-COMPILE := $(CC) $(CFLAGS) $(BUFFER) $(INCLUDE)
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/11 10:19:46 by gwolf             #+#    #+#              #
+#    Updated: 2023/11/11 10:28:35 by gwolf            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-#Colors
+# General
+NAME := libft.a
+CC := cc
+CPPFLAGS = -I include/
+CFLAGS = -Werror -Wextra -Wall -fPIE
+COMPILE := $(CC) $(CPPFLAGS) $(CFLAGS)
+
+# Colors
 RESET := \033[0m
 GREEN := \033[32m
 RED := \033[31m
 
-NAME := libft.a
-
+# Directories
 SRC_PATH := src
 OBJ_PATH := obj
 
@@ -98,34 +109,30 @@ OBJ_DIRS :=	ft_char\
 SRCS := $(addprefix $(SRC_PATH)/, $(SRCS_NAME))
 OBJS := $(addprefix $(OBJ_PATH)/, $(OBJS_NAME))
 
-HIT_TOTAL = $(words $(SRCS))
-HIT_COUNT = $(eval HIT_N != expr ${HIT_N} + 1)${HIT_N}
-ECHO = printf "\033[2K\r[`expr ${HIT_COUNT} '*' 100 / ${HIT_TOTAL}`%%] %s"
-
-.PHONY: all, clean, fclean, re
-.SILENT:
-
+.PHONY: all
 all: $(NAME)
-	printf "$(GREEN)%-50s$(RESET)\n" "$(NAME) done"
+	@printf "$(GREEN)%-50s$(RESET)\n" "$(NAME) done"
 
 $(NAME): $(OBJS)
-	printf "\033[2K\r$(GREEN)%-50s$(RESET)\n" "Compilation done"
-	ar -rcs $(NAME) $(OBJS)
+	@printf "\033[2K\r$(GREEN)%-50s$(RESET)\n" "Compilation done"
+	@ar -rcs $(NAME) $(OBJS)
 
 $(OBJ_PATH):
-	mkdir -p $(OBJ_PATH)
-	mkdir -p $(addprefix $(OBJ_PATH)/, $(OBJ_DIRS))
+	@mkdir -p $(OBJ_PATH)
+	@mkdir -p $(addprefix $(OBJ_PATH)/, $(OBJ_DIRS))
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	$(ECHO) "$(COMPILE) $@"
 	$(COMPILE) -o $@ -c $<
 
+.PHONY: clean
 clean:
-	rm -rf $(OBJ_PATH)
-	printf "$(RED)subdir $(OBJ_PATH) cleaned$(RESET)\n"
+	@rm -rf $(OBJ_PATH)
+	@printf "$(RED)subdir $(OBJ_PATH) removed$(RESET)\n"
 
+.PHONY: fclean
 fclean: clean
-	rm -f $(NAME)
-	printf "$(RED)$(NAME) cleaned$(RESET)\n"
+	@rm -f $(NAME)
+	@printf "$(RED)$(NAME) removed$(RESET)\n"
 
+.PHONY: re
 re: fclean all
