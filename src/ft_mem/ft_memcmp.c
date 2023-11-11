@@ -6,11 +6,11 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:22:37 by gwolf             #+#    #+#             */
-/*   Updated: 2023/01/21 11:08:43 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/11/11 10:31:00 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_mem.h>
+#include "ft_mem.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
