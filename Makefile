@@ -6,7 +6,7 @@
 #    By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 10:19:46 by gwolf             #+#    #+#              #
-#    Updated: 2023/11/11 10:28:35 by gwolf            ###   ########.fr        #
+#    Updated: 2023/11/11 10:36:33 by gwolf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME := libft.a
 CC := cc
 CPPFLAGS = -I include/
-CFLAGS = -Werror -Wextra -Wall -fPIE
+CFLAGS = -Werror -Wextra -Wall
 COMPILE := $(CC) $(CPPFLAGS) $(CFLAGS)
 
 # Colors
@@ -122,7 +122,7 @@ $(OBJ_PATH):
 	@mkdir -p $(addprefix $(OBJ_PATH)/, $(OBJ_DIRS))
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	$(COMPILE) -o $@ -c $<
+	$(COMPILE) -c $< -o $@
 
 .PHONY: clean
 clean:
