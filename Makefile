@@ -6,7 +6,7 @@
 #    By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 10:19:46 by gwolf             #+#    #+#              #
-#    Updated: 2023/11/11 10:36:33 by gwolf            ###   ########.fr        #
+#    Updated: 2023/11/13 13:30:28 by gwolf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ SRC_CHAR :=	ft_isalnum.c\
 			ft_isdigit.c\
 			ft_isprint.c\
 			ft_tolower.c\
-			ft_toupper.c
+			ft_toupper.c\
+			ft_isspace.c
 
 SRC_FD :=	ft_putchar_fd.c\
 			ft_putstr_fd.c\
@@ -115,7 +116,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@printf "\033[2K\r$(GREEN)%-50s$(RESET)\n" "Compilation done"
-	@ar -rcs $(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 $(OBJ_PATH):
 	@mkdir -p $(OBJ_PATH)
