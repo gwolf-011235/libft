@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:26:16 by gwolf             #+#    #+#             */
-/*   Updated: 2023/12/27 13:05:13 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/12/27 13:18:32 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
 int		ft_itoa_in_place(int num, char *str);
+int		ft_ftoa_in_place(float num, char *str, int precision);
 
 #endif

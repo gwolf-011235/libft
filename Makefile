@@ -6,7 +6,7 @@
 #    By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 10:19:46 by gwolf             #+#    #+#              #
-#    Updated: 2023/12/27 13:06:53 by gwolf            ###   ########.fr        #
+#    Updated: 2023/12/27 13:24:19 by gwolf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,8 @@ SRC_MEM :=	ft_bzero.c\
 
 SRC_NUM :=	ft_atoi.c\
 			ft_itoa.c\
-			ft_itoa_in_place.c
+			ft_itoa_in_place.c\
+			ft_ftoa_in_place.c
 
 SRC_PRINT :=	ft_printf.c\
 	  			ft_printf_utils.c\
