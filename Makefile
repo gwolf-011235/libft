@@ -6,7 +6,7 @@
 #    By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 10:19:46 by gwolf             #+#    #+#              #
-#    Updated: 2023/11/13 13:30:28 by gwolf            ###   ########.fr        #
+#    Updated: 2023/12/27 12:19:01 by gwolf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,8 @@ SRC_STR :=	ft_split.c\
 			ft_strnstr.c\
 			ft_strrchr.c\
 			ft_strtrim.c\
-			ft_substr.c
+			ft_substr.c\
+			ft_strrev.c
 
 SRCS_NAME :=	$(addprefix ft_char/, $(SRC_CHAR))\
 				$(addprefix ft_fd/, $(SRC_FD))\

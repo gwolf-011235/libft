@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwolf <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 10:38:01 by gwolf             #+#    #+#             */
-/*   Updated: 2023/01/21 12:57:07 by gwolf            ###   ########.fr       */
+/*   Updated: 2023/12/27 12:15:48 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char const *s, void (*f)(unsigned int, char*));
+void	ft_strrev(char *str);
 
 #endif
