@@ -6,12 +6,12 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:33:02 by gwolf             #+#    #+#             */
-/*   Updated: 2023/11/11 10:34:30 by gwolf            ###   ########.fr       */
+/*   Updated: 2024/01/06 16:08:06 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBT_H
+# define LIBFT_H
 
 # include "ft_char.h"
 # include "ft_fd.h"

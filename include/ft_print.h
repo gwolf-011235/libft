@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:44:15 by gwolf             #+#    #+#             */
-/*   Updated: 2023/01/21 12:52:52 by gwolf            ###   ########.fr       */
+/*   Updated: 2024/01/06 16:08:44 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 # include "ft_num.h"
 # include "ft_str.h"
 
-typedef struct s_label {
+typedef struct s_label
+{
 	va_list	args;
 	bool	hash;
 	bool	plus;

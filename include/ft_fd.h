@@ -6,7 +6,7 @@
 /*   By: gwolf <gwolf@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:18:16 by gwolf             #+#    #+#             */
-/*   Updated: 2023/04/20 17:53:51 by gwolf            ###   ########.fr       */
+/*   Updated: 2024/01/06 16:08:32 by gwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@
 # endif
 
 /* list for get_next_line */
-typedef struct s_buf_node {
+typedef struct s_buf_node
+{
 	char				buf[BUFFER_SIZE];
 	size_t				size;
 	bool				has_nl;
